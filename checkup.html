@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Chatbot Checkup</title>
+  <style>
+    /* Import Google Font - Poppins */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+  </style>
+</head>
+<body>
+  <h1 class="heading"> Chat<span>bot</span> </h1>
+  <section class="chat" id="chat">
+    <div class="row">
+      <div class="image">
+        <img src="chatbot.jpg" alt="Chatbot Image">
+      </div>
+      <div class="content">
+        <h3>Chatbot</h3>
+        <p>Do you wonder whether the symptoms you have are serious or not? Are you currently somewhere where you cannot check your symptoms with a doctor? Don't worry, we have created this virtual app to help you. Our chatbot specializes in addressing your symptoms and providing recommendations based on severity for checkups.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bar" id="bar">
+      <button id = "chatbot-button">Click here to chat!</button>
+  </section>
+
+  <!-- Botpress Chatbot Integration -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/ce365f52-c05c-40e3-85d1-0a3772774cce/webchat/v2.1/config.js"></script>
+
+  <script>
+    window.botpressWebChat.init({
+      botId: 'ce365f52-c05c-40e3-85d1-0a3772774cce',
+      hostUrl: 'https://mediafiles.botpress.cloud',
+      messagingUrl: 'https://mediafiles.botpress.cloud',
+      enableReset: true,
+      showConversationsButton: true
+    });
+
+    document.getElementById('chatbot-button').addEventListener('click',function(){
+        window.botpressWebChat.open();
+    });
+  </script>
+
+  <script src="index.js"></script>
+</body>
+</html>
